@@ -4,8 +4,7 @@ on:
 
   push:
     branches:
-      - DEV
-      - DEV-Allure-Reporting
+      - main
   # schedule:
   #   - cron: "* */4 * * *"
 
