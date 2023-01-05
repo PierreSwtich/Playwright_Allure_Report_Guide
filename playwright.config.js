@@ -11,8 +11,9 @@ const config = {
     timeout: 5000
   },
   reporter: [
-    ['line'], 
-    ['allure-playwright']
+    ['html'],
+    ['line'],
+  ["allure-playwright"],
   ],
   use: {
     actionTimeout: 0,
