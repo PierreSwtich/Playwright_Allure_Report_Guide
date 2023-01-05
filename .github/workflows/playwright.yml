@@ -55,13 +55,22 @@ jobs:
         allure_history: allure-history
         keep_reports: 20
 
-    - name: Deploy report to Github Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages
-        publish_dir: ./allure-report
+    - name: Deploy Allure report files to main branch
+      uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: test-branch # The branch name where you want to push the assets
+          FOLDER: ./allure-report # The directory where your assets are generated
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          MESSAGE: "Build: ({sha}) {msg}" # The commit message
+
+    # - name: Deploy report to Github Pages
+    #   if: always()
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_branch: gh-pages
+    #     publish_dir: ./allure-report
 
     # - name: Post the link to the report
     #   if: always()
