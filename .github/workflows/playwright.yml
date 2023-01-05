@@ -58,7 +58,7 @@ jobs:
     - name: Deploy Allure report files to main branch
       uses: s0/git-publish-subdir-action@develop
       env:
-        REPO: git@github.com:PierreSwtich/Playwright_Allure_Report_Guide.git
+        REPO: self   # git@github.com:PierreSwtich/Playwright_Allure_Report_Guide.git
         BRANCH: test-branch # The branch name where you want to push the assets
         FOLDER: ./allure-report # The directory where your assets are generated
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
