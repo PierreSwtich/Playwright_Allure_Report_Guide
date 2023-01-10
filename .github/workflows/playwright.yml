@@ -60,7 +60,7 @@ jobs:
       env:
         REPO: self   # git@github.com:PierreSwtich/Playwright_Allure_Report_Guide.git
         BRANCH: test-branch # The branch name where you want to push the assets
-       # CLEAR_GLOBS_FILE: ".clearglobfile"
+        CLEAR_GLOBS_FILE: ".clearglobfile"
         FOLDER: ./allure-report # The directory where your assets are generated
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
         MESSAGE: "Build: ({sha}) {msg}" # The commit message
