@@ -1,0 +1,5 @@
+name: TestWorkflow
+
+jobs:
+  test:
+    - name: marana
