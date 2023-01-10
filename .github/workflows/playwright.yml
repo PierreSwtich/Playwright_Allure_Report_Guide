@@ -4,7 +4,7 @@ on:
 
   push:
     branches:
-      - main
+      - Playwright
   # schedule:
   #   - cron: "* */4 * * *"
 
